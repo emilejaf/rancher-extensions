@@ -103,8 +103,6 @@ export class Openstack {
 
       this.domainId = res?.token?.project?.domain?.id;
 
-      console.log(this.domainId);
-
       this.regionsFromCatalog = [];
 
       if ((data as any).auth.scope && res?.token) {

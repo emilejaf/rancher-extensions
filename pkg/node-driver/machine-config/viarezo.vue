@@ -179,7 +179,7 @@ export default {
       this.value.secGroups = this.securityGroups.selected?.name;
       this.value.sshUser = this.sshUser;
       this.value.region = this.os.region;
-      //TODO this.value.serverGroupName = 
+      this.value.serverGroupName = this.value.id.split("/")[1];
 
       // Not configurable
       this.value.endpointType = 'publicURL';
@@ -217,32 +217,28 @@ export default {
       </div>
       <div class="row mt-10">
         <div class="col span-6">
-          <LabeledSelect :value="flavors.selected" @update:value="newValue => flavors.selected = newValue"
-            label="Flavor" :options="flavors.options" :disabled="!flavors.enabled || busy" :loading="flavors.busy"
-            :searchable="false" />
+          <LabeledSelect v-model="flavors.selected" label="Flavor" :options="flavors.options"
+            :disabled="!flavors.enabled || busy" :loading="flavors.busy" :searchable="false" />
         </div>
 
         <div class="col span-6">
-          <LabeledSelect :value="images.selected" @update:value="newValue => images.selected = newValue" label="Image"
-            :options="images.options" :disabled="!images.enabled || busy" :loading="images.busy" :searchable="false" />
+          <LabeledSelect v-model="images.selected" label="Image" :options="images.options"
+            :disabled="!images.enabled || busy" :loading="images.busy" :searchable="false" />
         </div>
       </div>
       <div class="row mt-10">
         <div class="col span-6">
-          <LabeledSelect :value="securityGroups.selected" @update:value="newValue => securityGroups.selected = newValue"
-            label="Security Groups" :options="securityGroups.options" :disabled="!securityGroups.enabled || busy"
-            :loading="securityGroups.busy" :searchable="false" />
+          <LabeledSelect v-model="securityGroups.selected" label="Security Groups" :options="securityGroups.options"
+            :disabled="!securityGroups.enabled || busy" :loading="securityGroups.busy" :searchable="false" />
         </div>
         <div class="col span-6">
-          <LabeledSelect :value="networks.selected" @update:value="newValue => networks.selected = newValue"
-            label="Networks" :options="networks.options" :disabled="!networks.enabled || busy" :loading="networks.busy"
-            :searchable="false" />
+          <LabeledSelect v-model="networks.selected" label="Networks" :options="networks.options"
+            :disabled="!networks.enabled || busy" :loading="networks.busy" :searchable="false" />
         </div>
       </div>
       <div class="row mt-10">
         <div class="col span-6">
-          <LabeledInput :value="sshUser" @update:value="newValue => sshUser = newValue" :mode="mode" :disabled="busy"
-            label="SSH User ID" placeholder="ubuntu" />
+          <LabeledInput v-model="sshUser" :mode="mode" :disabled="busy" label="SSH User ID" placeholder="ubuntu" />
         </div>
       </div>
     </div>

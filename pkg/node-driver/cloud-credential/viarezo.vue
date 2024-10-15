@@ -270,25 +270,25 @@ export default {
       <div class="col span-6">
         <LabeledInput :value="value.decodedData.endpoint" :disabled="step !== 1"
           label-key="driver.viarezo.auth.fields.endpoint" placeholder-key="driver.viarezo.auth.placeholders.endpoint"
-          type="text" :mode="mode" @input="value.setData('endpoint', $event.target.value)" />
+          type="text" :mode="mode" @input="value.setData('endpoint', $event)" />
       </div>
       <div class="col span-6">
         <LabeledInput :value="value.decodedData.domainName" :disabled="step !== 1"
           label-key="driver.viarezo.auth.fields.domainName"
           placeholder-key="driver.viarezo.auth.placeholders.domainName" type="text" :mode="mode"
-          @input="value.setData('domainName', $event.target.value);" />
+          @input="value.setData('domainName', $event);" />
       </div>
     </div>
     <div class="row">
       <div class="col span-6">
         <LabeledInput :value="value.decodedData.username" :disabled="step !== 1" class="mt-20"
           label-key="driver.viarezo.auth.fields.username" placeholder-key="driver.viarezo.auth.placeholders.username"
-          type="text" :mode="mode" @input="value.setData('username', $event.target.value);" />
+          type="text" :mode="mode" @input="value.setData('username', $event);" />
       </div>
       <div class="col span-6">
         <LabeledInput :value="value.decodedData.password" :disabled="step !== 1" class="mt-20"
           label-key="driver.viarezo.auth.fields.password" placeholder-key="driver.viarezo.auth.placeholders.password"
-          type="password" :mode="mode" @input="value.setData('password', $event.target.value);" />
+          type="password" :mode="mode" @input="value.setData('password', $event);" />
       </div>
     </div>
 

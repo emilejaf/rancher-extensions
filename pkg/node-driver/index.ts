@@ -11,17 +11,4 @@ export default function (plugin: IPlugin): void {
 
   // Load a product
   // plugin.addProduct(require('./product'));
-  // plugin.register(
-  //   "cloud-credential",
-  //   "viarezo",
-  //   () => import("./cloud-credential/viarezo.vue")
-  // );
-
-  // configureCrential
-
-  // plugin.register(
-  //   "machine-config",
-  //   "viarezo",
-  //   () => import("./machine-config/viarezo.vue")
-  // );
 }
