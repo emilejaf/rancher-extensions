@@ -13,10 +13,10 @@ driver:
         project: Project
         region: Region
       placeholders:
-        password: ($OS_PASSWORD)
-        username: ($OS_USERNAME)
-        domainName: ($OS_USER_DOMAIN_NAME)
-        endpoint: e.g. https://server:5000/v3 ($OS_AUTH_URL)
+        password: poney42
+        username: e.g. rancher
+        domainName: e.g. default
+        endpoint: e.g. https://openstack.viarezo.fr:5000/v3
       errors:
         notAllowed: "Rancher could not communicate with the Openstack server - this may be because the server `{ hostname }` is not configured in the node driver allow list"
         badGateway: "Rancher could not communicate with the Openstack server - the server must use the https protocol and must have a valid SSL certificate signed by a known CA"

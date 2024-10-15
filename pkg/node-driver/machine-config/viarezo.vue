@@ -130,6 +130,8 @@ export default {
       securityGroups: initOptions(),
       networks: initOptions(),
       sshUser: this.value?.sshUser || 'ubuntu',
+      volumeSize: this.value?.volumeSize || '20',
+      serverGroupName: this.value?.serverGroupName || '',
       errors: null,
     };
   },
@@ -179,13 +181,13 @@ export default {
       this.value.secGroups = this.securityGroups.selected?.name;
       this.value.sshUser = this.sshUser;
       this.value.region = this.os.region;
-      this.value.serverGroupName = this.value.id.split("/")[1];
+      this.value.serverGroupName = this.serverGroupName;
+      this.value.volumeSize = this.volumeSize;
 
       // Not configurable
       this.value.endpointType = 'publicURL';
       this.value.availabilityZone = "nova";
 
-      console.log(this.value);
     },
 
     test() {
@@ -238,8 +240,14 @@ export default {
       </div>
       <div class="row mt-10">
         <div class="col span-6">
-          <LabeledInput v-model="sshUser" :mode="mode" :disabled="busy" label="SSH User ID" placeholder="ubuntu" />
+          <LabeledInput v-model="sshUser" :mode="mode" :disabled="busy" label="SSH User" />
         </div>
+        <div class="col span-6">
+          <LabeledInput v-model="volumeSize" :mode="mode" :disabled="busy" label="Volume Size (in GB)" />
+        </div>
+      </div>
+      <div class="row mt-10">
+        <LabeledInput v-model="serverGroupName" :mode="mode" :disabled="busy" label="Server Group Name" />
       </div>
     </div>
   </div>
