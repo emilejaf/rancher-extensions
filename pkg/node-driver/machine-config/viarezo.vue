@@ -173,7 +173,7 @@ export default {
       // Copy the values from the form to the correct places on the value
       this.value.authUrl = this.os.endpoint;
       this.value.domainId = this.os.domainId;
-      //this.value.username = this.os.username;
+      this.value.username = this.os.username;
       this.value.projectId = this.os.projectId;
       this.value.flavorId = this.flavors.selected?.id;
       this.value.imageId = this.images.selected?.id;
