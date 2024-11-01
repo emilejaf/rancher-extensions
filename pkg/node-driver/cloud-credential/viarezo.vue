@@ -40,6 +40,7 @@ export default {
     if (this.mode !== _CREATE) {
       this.value.decodedData.username = this.value.annotations['viarezo.cattle.io/username'];
       this.value.decodedData.endpoint = this.value.annotations['viarezo.cattle.io/endpoint'];
+      this.value.decodedData.domainName = this.value.annotations['viarezo.cattle.io/domainName'];
     }
 
     return {

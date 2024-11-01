@@ -174,7 +174,8 @@ export class Openstack {
       "/os-security-groups",
       "security_groups",
       undefined,
-      initial
+      initial,
+      "name"
     );
   }
 
@@ -223,7 +224,8 @@ export class Openstack {
     api: string,
     field: string,
     mapper?: Function,
-    initial?: string
+    initial?: string,
+    initialKey?: string
   ) {
     // We are fetching the data for the options
     value.busy = true;
@@ -243,8 +245,10 @@ export class Openstack {
       value.busy = false;
 
       if (initial) {
+        const key = initialKey || "id";
+
         const found = value.options.find(
-          (option: any) => option.value.id === initial
+          (option: any) => option.value[key] === initial
         );
 
         if (found) {

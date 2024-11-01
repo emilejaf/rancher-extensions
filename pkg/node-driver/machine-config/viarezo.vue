@@ -26,6 +26,10 @@ export default {
   mixins: [CreateEditView],
 
   props: {
+    poolId: {
+      type: String,
+      default: '',
+    },
     uuid: {
       type: String,
       required: true,
@@ -110,10 +114,10 @@ export default {
 
       this.authenticating = false;
 
-      os.getFlavors(this.flavors, this.value?.flavorName);
-      os.getImages(this.images, this.value?.imageName);
+      os.getFlavors(this.flavors, this.value?.flavorId).then(() => console.log(this.flavors));
+      os.getImages(this.images, this.value?.imageId);
       os.getSecurityGroups(this.securityGroups, this.value?.secGroups);
-      os.getNetworkNames(this.networks, this.value?.netName);
+      os.getNetworkNames(this.networks, this.value?.netId);
     });
 
     this.$emit('validationChanged', true);
@@ -131,7 +135,6 @@ export default {
       networks: initOptions(),
       sshUser: this.value?.sshUser || 'ubuntu',
       volumeSize: this.value?.volumeSize || '20',
-      serverGroupName: this.value?.serverGroupName || '',
       errors: null,
     };
   },
@@ -181,13 +184,12 @@ export default {
       this.value.secGroups = this.securityGroups.selected?.name;
       this.value.sshUser = this.sshUser;
       this.value.region = this.os.region;
-      this.value.serverGroupName = this.serverGroupName;
       this.value.volumeSize = this.volumeSize;
 
       // Not configurable
+      this.value.serverGroupName = this.cluster.metadata.name + '-' + this.poolId;
       this.value.endpointType = 'publicURL';
       this.value.availabilityZone = "nova";
-
     },
 
     test() {
@@ -245,9 +247,6 @@ export default {
         <div class="col span-6">
           <LabeledInput v-model="volumeSize" :mode="mode" :disabled="busy" label="Volume Size (in GB)" />
         </div>
-      </div>
-      <div class="row mt-10">
-        <LabeledInput v-model="serverGroupName" :mode="mode" :disabled="busy" label="Server Group Name" />
       </div>
     </div>
   </div>

@@ -11,4 +11,6 @@ export default function (plugin: IPlugin): void {
 
   // Load a product
   // plugin.addProduct(require('./product'));
+
+  plugin.register("image", "providers/viarezo.svg", require("./icon.svg"));
 }

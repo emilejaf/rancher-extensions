@@ -1,0 +1,14 @@
+plugin/img/icon.78e828b7.svg
+plugin/node-driver-0.1.2.umd.min.5.js
+plugin/node-driver-0.1.2.umd.min.5.js.map
+plugin/node-driver-0.1.2.umd.min.cloud-credential.js
+plugin/node-driver-0.1.2.umd.min.cloud-credential.js.map
+plugin/node-driver-0.1.2.umd.min.js
+plugin/node-driver-0.1.2.umd.min.js.map
+plugin/node-driver-0.1.2.umd.min.machine-config.js
+plugin/node-driver-0.1.2.umd.min.machine-config.js.map
+plugin/node-driver-0.1.2.umd.min.vendors~cloud-credential~machine-config.js
+plugin/node-driver-0.1.2.umd.min.vendors~cloud-credential~machine-config.js.map
+plugin/node-driver-0.1.2.umd.min.vendors~machine-config.js
+plugin/node-driver-0.1.2.umd.min.vendors~machine-config.js.map
+plugin/package.json
