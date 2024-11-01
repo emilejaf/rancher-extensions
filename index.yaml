@@ -1,24 +1,44 @@
 apiVersion: v1
 entries:
   node-driver:
-  - annotations:
-      catalog.cattle.io/certified: rancher
-      catalog.cattle.io/kube-version: '>= v1.26.0-0 < v1.31.0-0'
-      catalog.cattle.io/namespace: cattle-ui-plugin-system
-      catalog.cattle.io/os: linux
-      catalog.cattle.io/permits-os: linux, windows
-      catalog.cattle.io/rancher-version: '>= v2.9.2'
-      catalog.cattle.io/scope: management
-      catalog.cattle.io/ui-component: plugins
-      catalog.cattle.io/ui-extensions-version: '>= 2.0.0'
-    apiVersion: v2
-    appVersion: 0.1.1
-    created: "2024-10-15T14:47:29.367563+02:00"
-    description: VIAREZO Node Driver
-    digest: a8b9a871b2800298ea649301869908b80ab964470874e3ed5b0ee311d735fa41
-    name: node-driver
-    type: application
-    urls:
-    - assets/node-driver/node-driver-0.1.1.tgz
-    version: 0.1.1
-generated: "2024-10-15T14:47:29.367374+02:00"
+    - annotations:
+        catalog.cattle.io/certified: rancher
+        catalog.cattle.io/kube-version: ">= v1.26.0-0 < v1.31.0-0"
+        catalog.cattle.io/namespace: cattle-ui-plugin-system
+        catalog.cattle.io/os: linux
+        catalog.cattle.io/permits-os: linux, windows
+        catalog.cattle.io/rancher-version: ">= v2.9.2"
+        catalog.cattle.io/scope: management
+        catalog.cattle.io/ui-component: plugins
+        catalog.cattle.io/ui-extensions-version: ">= 2.0.0"
+      apiVersion: v2
+      appVersion: 0.1.2
+      created: "2024-11-01T13:23:23.383586+01:00"
+      description: VIAREZO Node Driver
+      digest: 46f2b8dce3824e037afe9acbdf9343dce8fd5d91425ed383a700fa0677e0997f
+      name: node-driver
+      type: application
+      urls:
+        - assets/node-driver/node-driver-0.1.2.tgz
+      version: 0.1.2
+    - annotations:
+        catalog.cattle.io/certified: rancher
+        catalog.cattle.io/kube-version: ">= v1.26.0-0 < v1.31.0-0"
+        catalog.cattle.io/namespace: cattle-ui-plugin-system
+        catalog.cattle.io/os: linux
+        catalog.cattle.io/permits-os: linux, windows
+        catalog.cattle.io/rancher-version: ">= v2.9.2"
+        catalog.cattle.io/scope: management
+        catalog.cattle.io/ui-component: plugins
+        catalog.cattle.io/ui-extensions-version: ">= 2.0.0"
+      apiVersion: v2
+      appVersion: 0.1.1
+      created: "2024-11-01T13:23:23.383481+01:00"
+      description: VIAREZO Node Driver
+      digest: a8b9a871b2800298ea649301869908b80ab964470874e3ed5b0ee311d735fa41
+      name: node-driver
+      type: application
+      urls:
+        - assets/node-driver/node-driver-0.1.1.tgz
+      version: 0.1.1
+generated: "2024-11-01T13:23:23.383303+01:00"
